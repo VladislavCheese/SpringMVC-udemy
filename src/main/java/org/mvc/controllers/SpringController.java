@@ -42,7 +42,7 @@ public class SpringController {
         model.addAttribute("person", person);
         return "person-info";
     }
-    @RequestMapping("delete_person")
+    @RequestMapping("/delete_person")
     public String deletePerson(@RequestParam("personId") int personId){
         peopleService.deletePerson(personId);
         return "redirect:/";

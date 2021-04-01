@@ -14,18 +14,18 @@
         <th>Salary</th>
         <th>Operations</th>
     </tr>
-    <c:forEach var="person" items="${allPeople}">
+    <c:forEach var="per" items="${allPeople}">
         <c:url var="updateButton" value = "/update_info">
-            <c:param name = "personId" value = "${person.peopleId}"/>
+            <c:param name = "personId" value = "${per.peopleId}"/>
         </c:url>
         <c:url var="deleteButton" value = "/delete_person">
-            <c:param name = "personId" value = "${person.peopleId}"/>
+            <c:param name = "personId" value = "${per.peopleId}"/>
         </c:url>
         <tr>
-        <td>%{person.name}</td>
-        <td>%{person.surname}</td>
-        <td>%{person.department}</td>
-        <td>%{person.salary}</td>
+        <td>${per.name}</td>
+        <td>${per.surname}</td>
+        <td>${per.department}</td>
+        <td>${per.salary}</td>
         <td>
             <input type = "button" value = "Update"
             onclick="window.location.href = '${updateButton}'"/>
